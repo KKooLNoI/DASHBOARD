@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: nova-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 4000
+      - key: DISCORD_WEBHOOK_URL
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: DB_PATH
+        value: /data/nova.db
+    disk:
+      name: nova-db
+      mountPath: /data
+      sizeGB: 1
