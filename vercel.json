@@ -2,7 +2,5 @@
   "buildCommand": "cd frontend && npm install && npm run build",
   "outputDirectory": "frontend/dist",
   "installCommand": "echo 'skip root install'",
-  "env": {
-    "VITE_API_URL": "@nova_api_url"
-  }
+  "framework": null
 }
